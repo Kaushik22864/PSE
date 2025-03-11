@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - SageCure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #20c997;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+    .login-container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .login-btn {
+      background: #1a73e8;
+      color: white;
+    }
+    .signup-btn {
+      background: #0044cc;
+      color: white;
+    }
+    .link {
+      font-size: 14px;
+      color: #1a73e8;
+      display: block;
+      margin-top: 10px;
+      text-decoration: none;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <a href="index.html"><img src="logo-without-background-10.png" alt="SageCure Logo" width="400"></a>
+  </div>
+  <div class="login-container">
+    <h2>Sign In</h2>
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Enter your email">
+    <span class="error" id="emailError"></span>
+    
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Enter your password">
+    <span class="error" id="passwordError"></span>
+    
+    <button class="login-btn" onclick="validateLogin()">Login</button>
+    <a href="#" class="link">Don’t have an account?</a>
+    <a href="SignUp.html"><button class="signup-btn">Sign Up</button></a>
+  </div>
+  
+  <script>
+    function validateLogin() {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      
+      let valid = true;
+      
+      if (email === "") {
+        document.getElementById("emailError").innerText = "Email is required";
+        valid = false;
+      } else {
+        document.getElementById("emailError").innerText = "";
+      }
+      
+      if (password === "") {
+        document.getElementById("passwordError").innerText = "Password is required";
+        valid = false;
+      } else {
+        document.getElementById("passwordError").innerText = "";
+      }
+      
+      if (valid) {
+        window.location.href = "loggedInIndex.html";
+      }
+    }
+  </script>
+</body>
+</html>
