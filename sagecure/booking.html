@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Doctor Booking</title>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <style>
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .popup button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <div class="hero_bg_box">
+      <img src="images/hero-bg.png" alt="">
+    </div>
+    <!-- Header section starts -->
+    <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                <img src="logo-without-background-10.png" width="300px" />
+              </span>
+            </a>
+      
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="departments.html">Departments</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="doctors.html">Doctors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+                <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+    <!-- Header section ends -->
+  </div>
+
+  <section class="doctor_booking_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>Book an Appointment with Dr. Sita Shrestha</h2>
+      </div>
+      <div class="doctor_profile text-center">
+        <img src="images/d1.jpg" alt="" class="doctor_img">
+        <h3>Dr. Sita Shrestha</h3>
+        <h5>Orthopedic Specialist</h5>
+        <p>Dr. Sita Shrestha has over 10 years of expertise in treating bone and joint-related conditions.</p>
+      </div>
+      <form id="appointmentForm" action="book_appointment.php" method="POST">
+        <div class="mb-3">
+          <label for="patient_name" class="form-label">Full Name</label>
+          <input type="text" id="patient_name" name="patient_name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="patient_email" class="form-label">Email</label>
+          <input type="email" id="patient_email" name="patient_email" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="appointment_date" class="form-label">Appointment Date</label>
+          <input type="date" id="appointment_date" name="appointment_date" class="form-control" required>
+        </div>
+        <div class="mb-3">
+          <label for="appointment_time" class="form-label">Appointment Time</label>
+          <select id="appointment_time" name="appointment_time" class="form-control" required>
+            <option value="">Select a time</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+      </form>
+    </div>
+  </section>
+
+  <div id="successPopup" class="popup">
+    <p>Appointment booked successfully!</p>
+    <button onclick="closePopup()" class="btn btn-success">OK</button>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>
+              Reach at..
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  sagecure@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="footer_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>
+              About
+            </h4>
+            <p>
+              SageCure is an innovative project developed by students of IIMS College, dedicated to transforming the way appointments are scheduled.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="footer_links">
+              <a class="active" href="index.html">
+                Home
+              </a>
+              <a class="" href="about.html">
+                About
+              </a>
+              <a class="" href="departments.html">
+                Departments
+              </a>
+              <a class="" href="doctors.html">
+                Doctors
+              </a>
+              <a class="" href="contact.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          IIMS College<br><br>
+            &copy; <span id="displayYear"></span> Distributed By
+           IIMS
+        </p>
+       
+      </div>  
+    </div>
+  </footer>
+  <!-- Footer Section Ends -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script>
+    function closePopup() {
+      document.getElementById('successPopup').style.display = 'none';
+    }
+
+    document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  let formData = new FormData(this);
+
+  fetch("book_appointment.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.json()) // Parse response as JSON
+  .then(data => {
+    if (data.success) { // Check the success key in JSON response
+      document.getElementById("successPopup").style.display = "block";
+    } else {
+      alert("Error: " + (data.message || "Something went wrong"));
+    }
+  })
+  .catch(error => console.error("Error:", error));
+});
+  </script>
+</body>
+</html>
